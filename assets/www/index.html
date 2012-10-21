@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Cordova</title>
+<script type="text/javascript" charset="utf-8" src="cordova-1.9.0.js"></script>
+<script type="text/javascript" charset="utf-8" src="jquery-1.8.2.min.js"></script>
+<style type="text/css">
+* { font-family: ariel; font-size: 1em; line-height: 1.5em; color: white; }
+h1 {color: black; }
+body {background-color: pink; }
+span { background-color: inherit; }
+#trackThese li { background-color: red; list-style-type: none; border-bottom: 1px solid black; height: 18%; margin-left: 0; padding-left: 1em;  width 100%; display: block; clear: both; }
+#trackThese li:nth-child(2n+2) {background-color: black; }
+</style>
+
+</head>
+<body>
+<h1>Click to Track!  Go Jen!</h1>
+<ul id="trackThese">
+<li id="vitamin"><span>0</span> Vitamins Taken</li>
+<li id="happy"><span>0</span> Silly Pills Taken</li>
+<li id="allergy"><span>0</span> Allergy Squirts</li>
+<li id="water"><span>0</span> Glasses of Water</li>
+<li id="wine"><span>0</span> Glasses of Wine</li>
+<li id="smokes"><span>0</span> Cigarettes Smoked</li>
+</ul>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#trackThese li").click(function(){
+		var current = parseInt($(this).children(':first-child').html());
+		$(this).children(':first-child').html(current + 1);
+	});
+});
+</script>
+</body>
+</html>
